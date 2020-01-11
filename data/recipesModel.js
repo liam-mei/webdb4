@@ -20,7 +20,7 @@ function getShoppingList(recipe_id) {
 function getInstructions(recipe_id) {
   return db("steps as s")
     .where("s.recipe_id", recipe_id)
-    .orderBy("steps.order_number");
+    .orderBy("s.order_number");
 }
 
 async function addRecipe(recipe) {
@@ -50,6 +50,5 @@ module.exports = {
   addRecipe,
   updateRecipe,
   removeRecipe,
-  remove2,
   getInstructions
 };
